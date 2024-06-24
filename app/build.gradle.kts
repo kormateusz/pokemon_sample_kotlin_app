@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.kotlinSerialization)
+    id("kotlin-parcelize")
 }
 
 android {
@@ -51,6 +52,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.coil.compose)
     implementation(libs.navigation)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.koin)
