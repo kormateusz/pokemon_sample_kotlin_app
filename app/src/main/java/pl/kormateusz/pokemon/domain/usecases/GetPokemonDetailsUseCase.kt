@@ -5,8 +5,9 @@ import pl.kormateusz.pokemon.domain.repositories.PokemonRepository
 
 class GetPokemonDetailsUseCase(
     private val pokemonRepository: PokemonRepository
-) : BaseParamUseCase<String, PokemonDetails>() {
+) : BaseParamUseCase<String, Result<PokemonDetails>>() {
 
-    override suspend fun buildUseCase(param: String): PokemonDetails =
-        pokemonRepository.getPokemonDetails()
+    @Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE")
+    override suspend fun buildUseCase(id: String): Result<PokemonDetails> =
+        pokemonRepository.getPokemonDetails(id)
 }

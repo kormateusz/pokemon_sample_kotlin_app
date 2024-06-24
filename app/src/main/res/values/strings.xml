@@ -3,4 +3,6 @@
     <string name="pokedex_screen_title">Pokedex</string>
     <string name="details_screen_weight_header">Weight</string>
     <string name="details_screen_height_header">Height</string>
+    <string name="pokedex_screen_error">Cannot load Pokemons list</string>
+    <string name="details_screen_error">Cannot load Pokemon details</string>
 </resources>

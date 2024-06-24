@@ -7,6 +7,6 @@ import pl.kormateusz.pokemon.ui.screens.details.DetailsViewModel
 import pl.kormateusz.pokemon.ui.screens.pokedex.PokedexViewModel
 
 val viewModelModule = module {
-    viewModel { PokedexViewModel(get()) }
-    viewModel { (pokemonId: String) -> DetailsViewModel(pokemonId, get()) }
+    viewModel { PokedexViewModel(get(), get()) }
+    viewModel { (pokemonId: String) -> DetailsViewModel(pokemonId, get(), get()) }
 }

@@ -5,5 +5,5 @@ import pl.kormateusz.pokemon.data.repositories.PokemonRepositoryImpl
 import pl.kormateusz.pokemon.domain.repositories.PokemonRepository
 
 val repositoriesModule = module {
-    single<PokemonRepository> { PokemonRepositoryImpl() }
+    single<PokemonRepository> { PokemonRepositoryImpl(get()) }
 }

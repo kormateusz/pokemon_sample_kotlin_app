@@ -20,8 +20,12 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
-    }
 
+        buildConfigField("String", "API_URL", "\"https://pokeapi.co/api/v2/\"")
+    }
+    buildFeatures {
+        buildConfig = true
+    }
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -52,6 +56,9 @@ android {
 }
 
 dependencies {
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.okhttp)
     implementation(libs.coil.compose)
     implementation(libs.navigation)
     implementation(libs.kotlinx.serialization.json)

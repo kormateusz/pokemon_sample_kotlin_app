@@ -4,6 +4,6 @@ import pl.kormateusz.pokemon.domain.models.Pokemon
 import pl.kormateusz.pokemon.domain.models.PokemonDetails
 
 interface PokemonRepository {
-    suspend fun getPokemons(): List<Pokemon>
-    suspend fun getPokemonDetails(): PokemonDetails
+    suspend fun getPokemons(): Result<List<Pokemon>>
+    suspend fun getPokemonDetails(id: String): Result<PokemonDetails>
 }

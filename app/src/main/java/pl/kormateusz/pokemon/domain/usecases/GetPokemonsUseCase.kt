@@ -5,8 +5,8 @@ import pl.kormateusz.pokemon.domain.repositories.PokemonRepository
 
 class GetPokemonsUseCase(
     private val pokemonRepository: PokemonRepository
-) : BaseNoParamUseCase<List<Pokemon>>() {
+) : BaseNoParamUseCase<Result<List<Pokemon>>>() {
 
-    override suspend fun buildUseCase(): List<Pokemon> =
+    override suspend fun buildUseCase(): Result<List<Pokemon>> =
         pokemonRepository.getPokemons()
 }

@@ -21,5 +21,9 @@ enum class PokemonTypes(@ColorRes val color: Int) {
     ICE(R.color.iceType),
     GHOST(R.color.ghostType),
     DRAGON(R.color.dragonType),
-    UNKNOWN(R.color.normalType),
+    UNKNOWN(R.color.normalType);
+
+    companion object {
+        fun find(name: String?) = entries.firstOrNull { it.name.lowercase() == name?.lowercase() } ?: UNKNOWN
+    }
 }
