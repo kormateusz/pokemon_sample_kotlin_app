@@ -21,7 +21,8 @@ class PokedexViewModel(
     init {
         viewModelScope.launch(Dispatchers.IO) {
             getPokemonsUseCase.execute()
-                .onSuccess { _state.emit(PokedexState.Loaded(it)) }.onFailure {
+                .onSuccess { _state.emit(PokedexState.Loaded(it)) }
+                .onFailure {
                     _state.emit(
                         PokedexState.Error(it.message ?: resourceProvider.getString(R.string.pokedex_screen_error))
                     )
